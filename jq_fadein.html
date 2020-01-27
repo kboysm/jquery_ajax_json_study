@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jq_test1</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <button id="fadeIn">fadeIn()</button>
+        <button id="fadeOut">fadeOut()</button>
+        <img id="dog" src="img/img1.jpg.png" alt="이미지~" width="120" height="100" style="display: none; position: relative;" />
+        <script>
+            //fadein,out은 영화처럼 천천히 등장하게 하거나 빠르게 등장하게 할 수 있다.!
+            $(document).ready(function(){
+               $("#fadeIn").click(function(){
+                   $("#dog").fadeIn("slow");
+               });
+               $("#fadeOut").click(function(){
+                   $("#dog").fadeOut("slow");
+               });
+            });
+        </script>
+    </body>
+</html>
