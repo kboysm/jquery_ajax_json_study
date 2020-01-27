@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jq_test1</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <h2>클릭하면 사라집니다.</h2>
+        <p>이것두~</p>
+        <p class ="myc">이것두~</p>
+        <p id = "myi">이것두~</p>
+        <script>
+            $(document).ready(function (){
+                //$(document).ready(function (){})의 의미 : Dom이 로딩되어서 준비가 되면 작업을 시작한다. 구체적으로 jquery 메서드를 호출한다.
+                //문서가 완전히 로드되기 전에 jquery 코드가 실행되는 것을 방지한다.
+                $("h2").click(function (){
+                    $(this).hide();
+                });
+                $("p").click(function(){
+                    $(this).hide();
+                    //테스트 해보니 p가 여러개일때 p태그를 아무거나 클릭하면 맨 마지막 p태그부터 순서대로 사라진다.
+                });
+                $("p.myc").slideUp();
+                $("p#myi").css("background-color","red"); //css는 이런식으로 접근가능하네~
+            });
+        </script>
+    </body>
+</html>

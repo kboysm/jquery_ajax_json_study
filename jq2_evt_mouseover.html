@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jq_test1</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <style>
+            div.out{
+                width: 200px;
+                height: 60px;
+                background-color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="out">
+            <p>마우스를 여기로 움직이세요</p>
+            <p>0</p>
+        </div>
+        <script>
+            let i =0;
+            $(document).ready(function (){
+                $("div.out").mouseover(function(){
+                    $("p:first",this).text("mouse over");
+                    $("p:last",this).text(++i);
+                });
+            });
+        </script>
+    </body>
+</html>
