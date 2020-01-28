@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jq_test1</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <style>
+            .warning{
+                border : 1px solid black;
+                background-color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="div1">
+            <p>예제 단락</p>
+        </div>
+        <br>
+        <button>addclass()</button>
+        <script>
+            //slideUp,slideDown : 요소를 밀어올리거나 밀어내린다.
+            $(document).ready(function(){
+                $("button").click(function(){
+                    $("#div1").addClass("warning");
+                    //이미 선언 되어 있는 css class를 적용시킬 수 있다
+                    alert($(window).width()); // 브라우저의 뷰포트의 폭
+                    alert($(document).width()); //html 문서 폭
+                });
+            });
+        </script>
+    </body>
+</html>
