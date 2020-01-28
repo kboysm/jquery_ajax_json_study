@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jq_test1</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <p id="target">이것은 <strong>하나의</strong> 단락입니다.</p>
+        <button id="text">text()</button>
+        <button id="html">html()</button><br>
+        <br>
+        이름 : <input type="text" id="target2" value=""><br>
+        <button id="text_val">val()</button>
+        <script>
+            //slideUp,slideDown : 요소를 밀어올리거나 밀어내린다.
+            $(document).ready(function(){
+               $("#text").click(function(){
+                $("#target").text("안녕하세염?");
+               });
+               $("#html").click(function(){
+                $("#target").html("<b>안녕하세욤?</b>");
+               });
+               $("#text_val").click(function(){
+                alert($("#target2").val());
+               });
+            });
+        </script>
+    </body>
+</html>
