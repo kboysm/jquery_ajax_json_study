@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>json</title>
+    </head>
+    <body>
+        <h4>학생 명단</h4>
+        <p style="background-color: yellow;">
+            이름 : <span id="name"></span> &nbsp
+            나이 : <span id="age"></span>
+        </p>
+        <script>
+            let s='['+
+            '{"name":"Hong","age":"21"},'+'{"name":"Lim","age":"22"},'+'{"name":"Park","age":"23"}]';
+            //let students = eval("("+s+")"); eval함수는 모든 자바스크립트 문장을 컴파일하고 실행할 수 있다. 잠재적인 보안 문제를 일으킬 수 있다.
+            let students = JSON.parse(s); //JSON전용 파서
+           // students[1].name="Lee";
+            document.getElementById("name").innerHTML=students[1].name;
+            document.getElementById("age").innerHTML=students[1].age;
+        </script>
+    </body>
+</html>

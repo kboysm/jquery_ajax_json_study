@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>ajax</title>
+    </head>
+    <body>
+        <div id="target" style="width: 300px; height: 60px; border:1px solid black;">
+        </div>
+        <button type="button" onclick="getFromServer()">Get Data</button>
+        <script>
+            function getFromServer(){
+                let req;
+                if(window.XMLHttpRequest){
+                    req= new XMLHttpRequest();
+                }else {
+                    req = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                req.onreadystatechange = function(){
+                    if(req.readyState == 4 && req.status ==200){
+                        document.getElementById("target").innerHTML = req.responseText;
+                    }
+                }
+                req.open("GET","testfile1.txt",true);
+                req.send();
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <meta charset="utf-8">
+        <title>ajax</title>
+    </head>
+    <body>
+        <div id="target" style="width: 300px; height: 60px; border:1px solid black;">
+        </div>
+        <button>Get Data</button>
+        <script>
+            $(document).ready(function(){
+                $("button").click(function(){
+                    $("#target").load("testfile1.txt");
+                }); 
+                //제이쿼리의 .load()메서드를 사용하면 아주 간편하게 ajax를 활용할 수 있다.
+            });
+        </script>
+    </body>
+</html>
